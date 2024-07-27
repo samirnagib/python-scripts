@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 # USO:  get-value.py <AMBIENTE> <DADO>
 
 import platform
@@ -14,8 +14,8 @@ def mysql_connection(host, user, passwd, database=None):
         host = host,
         user = user,
         passwd = passwd,
-        database = database
-    )
+        database = database,
+        auth_plugin='mysql_native_password')
     return connection
 
 #DEFINIR AMBIENTE DE TRABALHO
@@ -31,7 +31,7 @@ def mysql_connection(host, user, passwd, database=None):
 
 if  len(sys.argv) > 2 :  #  parametros
     if  sys.argv[1].upper() =="PRD":
-        print("AMBIENTE DE PRODUCAI")
+        #print("AMBIENTE DE PRODUCAI")
         #base producao
         connection = mysql_connection('192.168.175.49', 'script', 'Lun@17N0V3', 'NETMON')
         query = """Select * from HistoryNetDB order by idSEQ  DESC LIMIT 1"""
@@ -60,7 +60,7 @@ if  len(sys.argv) > 2 :  #  parametros
             HoraColeta = valor[18]
 
     elif sys.argv[1].upper() =="DEV":
-        print("AMBIENTE DE DESENVOLVIMENTO")
+        #print("AMBIENTE DE DESENVOLVIMENTO")
         #base de teste
         connection = mysql_connection('192.168.175.49', 'script', 'Lun@17N0V3', 'NETMONTE')
         query = """Select * from HistoryNetDB order by idSEQ  DESC LIMIT 1"""
@@ -88,7 +88,7 @@ if  len(sys.argv) > 2 :  #  parametros
             Timestamp_C = valor[17]
             HoraColeta = valor[18]
     else:
-        print("Parametro de banco nao selecionado, assumindo banco de testes.")
+        #print("Parametro de banco nao selecionado, assumindo banco de testes.")
         #base de teste
         connection = mysql_connection('192.168.175.49', 'script', 'Lun@17N0V3', 'NETMONTE')
         query = """Select * from HistoryNetDB order by idSEQ  DESC LIMIT 1"""
@@ -116,18 +116,7 @@ if  len(sys.argv) > 2 :  #  parametros
             Timestamp_C = valor[17]
             HoraColeta = valor[18]
     # fim da selecao de banco
-        
-
-
     #RECUPERAR A INFORMACAO    
-    
-    #DEFINIR TIPO DE DADOS RETORNADO
-    # SRV - DADOS DO SERVIDOR
-    # CLI - DADOS DO CLIENTE
-    # DUL - DOWNLOAD E UPLODAD E LATENCIA
-    # EXC - EXECUCAO DO SCRITP
-    # ALL - TODOS OS DADOS
-    
     if sys.argv[2].upper() =="SRV":
         print(idServer,",",sServer,",",City,",",Pais,",",CC,",",Latitude_S,",",Longitude_S)
     elif sys.argv[2].upper() =="CLI":
@@ -142,7 +131,7 @@ if  len(sys.argv) > 2 :  #  parametros
         print(HoraColeta)
 
 else:
-    print("Parametro de banco nao selecionado, assumindo banco de testes.")
+    #print("Parametro de banco nao selecionado, assumindo banco de testes.")
     #base de teste
     connection = mysql_connection('192.168.175.49', 'script', 'Lun@17N0V3', 'NETMONTE')
     query = """Select * from HistoryNetDB order by idSEQ  DESC LIMIT 1"""
@@ -152,6 +141,5 @@ else:
     for valor in row:
         HoraColeta = valor[18]
     print(HoraColeta)
-
 
 connection.close()
