@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # USO:  get-value.py <AMBIENTE> <DADO>
 
 import platform
@@ -17,6 +17,7 @@ def mysql_connection(host, user, passwd, database=None):
         database = database,
         auth_plugin='mysql_native_password')
     return connection
+
 
 #DEFINIR AMBIENTE DE TRABALHO
 # PRD - PRODUCAO
