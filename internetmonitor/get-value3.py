@@ -101,60 +101,62 @@ if  len(sys.argv) > 2 :
         # RETORNANDO os valores do segundo parametro
         if  sys.argv[2].upper() =="SEQ":
             print(idSEQ)
+            gera_log("log_SEQ.log",HoraColeta)
         elif sys.argv[2].upper() =="IDS":
             print(idServer)
+            gera_log("log_IDS.log",HoraColeta)
         elif sys.argv[2].upper() =="SRV":
             print(sServer)
+            gera_log("log_SRV.log",HoraColeta)
         elif sys.argv[2].upper() =="SCP":
             print(Pais)
+            gera_log("log_SCP.log",HoraColeta)
         elif sys.argv[2].upper() =="SCC":
             print(CC)
+            gera_log("log_SCC.log",HoraColeta)
         elif sys.argv[2].upper() =="SLT":
             print(Latitude_S)
+            gera_log("log_SLT.log",HoraColeta)
         elif sys.argv[2].upper() =="SLO":
             print(Longitude_S)
+            gera_log("log_SLO.log",HoraColeta)
         elif sys.argv[2].upper() =="STO":
             print(Latencia_S)
+            gera_log("log_STO.log",HoraColeta)
         elif sys.argv[2].upper() =="VDL":
             print(Download)
+            gera_log("log_VDL.log",HoraColeta)
         elif sys.argv[2].upper() =="VUL":
             print(Upload)
+            gera_log("log_VUL.log",HoraColeta)
         elif sys.argv[2].upper() =="CIP":
             print(IP_Address)
+            gera_log("log_CIP.log",HoraColeta)
         elif sys.argv[2].upper() =="CNM":
             print(ISP)
+            gera_log("log_CNM.log",HoraColeta)
         elif sys.argv[2].upper() =="CRT":
             print(ISP_Rate)
+            gera_log("log_CRT.log",HoraColeta)
         elif sys.argv[2].upper() =="CCC":
             print(CCCLiente)
+            gera_log("log_CCC.log",HoraColeta)
         elif sys.argv[2].upper() =="CLT":
             print(Latitude_C)
+            gera_log("log_CLT.log",HoraColeta)
         elif sys.argv[2].upper() =="CLO":
             print(Longitude_C)
+            gera_log("log_CLO.log",HoraColeta)
         elif sys.argv[2].upper() =="CTM":
             print(Timestamp_C)
+            gera_log("log_CTM.log",HoraColeta)
         elif sys.argv[2].upper() =="THC":
             print(HoraColeta)
             gera_log("log_THC.log",HoraColeta)
-            
         else:
             print("WARNING: Invalid data argument. Assuming time execution script.")
-    
-    
-    
-    
-    
-    
     connection.close()
 else:
     #quando o comando é chamado sem parametros o scritp assume o ambiente e dev e retorna o campo hora da coleta
     print("ERROR: Missing all arguments.")
-    
-    
-    
-    
-    
-    
-   
-
-
+print("OK: Script done.")    
