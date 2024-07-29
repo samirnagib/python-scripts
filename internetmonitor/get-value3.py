@@ -19,15 +19,19 @@ def mysql_connection(host, user, passwd, database=None):
     return connection
 
 # criaçao do caminho do log
-def gera_log(arquivo):
+def gera_log(arquivo,dado):
+    data = dado
     file = arquivo
-    folder = os.getcwd()
+    #folder = os.getcwd()
+    folder = "/data/log"
     try:
-        os.makedirs(folder+"/"+file)
-    except OSError:
-            return folder+"/"
-    else:
-            return folder+"/"
+        with open(folder+"/"+file,"w+") as log:
+            log.write(str(data))
+    except FileNotFoundError:
+        with open(folder+"/"+file,"w") as log:
+            log.write(str(data))
+    
+    log.close()
 
 
 #DEFINIR AMBIENTE DE TRABALHO
@@ -102,35 +106,37 @@ if  len(sys.argv) > 2 :
         elif sys.argv[2].upper() =="SRV":
             print(sServer)
         elif sys.argv[2].upper() =="SCP":
-            print(idServer)
+            print(Pais)
         elif sys.argv[2].upper() =="SCC":
-            print(idServer)
+            print(CC)
         elif sys.argv[2].upper() =="SLT":
-            print(idServer)
+            print(Latitude_S)
         elif sys.argv[2].upper() =="SLO":
-            print(idServer)
+            print(Longitude_S)
         elif sys.argv[2].upper() =="STO":
-            print(idServer)
+            print(Latencia_S)
         elif sys.argv[2].upper() =="VDL":
-            print(idServer)
+            print(Download)
         elif sys.argv[2].upper() =="VUL":
-            print(idServer)
+            print(Upload)
         elif sys.argv[2].upper() =="CIP":
-            print(idServer)
+            print(IP_Address)
         elif sys.argv[2].upper() =="CNM":
-            print(idServer)
+            print(ISP)
         elif sys.argv[2].upper() =="CRT":
-            print(idServer)
+            print(ISP_Rate)
         elif sys.argv[2].upper() =="CCC":
-            print(idServer)
+            print(CCCLiente)
         elif sys.argv[2].upper() =="CLT":
-            print(idServer)
+            print(Latitude_C)
         elif sys.argv[2].upper() =="CLO":
-            print(idServer)
+            print(Longitude_C)
         elif sys.argv[2].upper() =="CTM":
-            print(idServer)
+            print(Timestamp_C)
         elif sys.argv[2].upper() =="THC":
             print(HoraColeta)
+            gera_log("log_THC.log",HoraColeta)
+            
         else:
             print("WARNING: Invalid data argument. Assuming time execution script.")
     
