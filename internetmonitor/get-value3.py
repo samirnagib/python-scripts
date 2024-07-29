@@ -101,55 +101,55 @@ if  len(sys.argv) > 2 :
         # RETORNANDO os valores do segundo parametro
         if  sys.argv[2].upper() =="SEQ":
             print(idSEQ)
-            gera_log("log_SEQ.log",HoraColeta)
+            gera_log("log_SEQ.log",idSEQ)
         elif sys.argv[2].upper() =="IDS":
             print(idServer)
-            gera_log("log_IDS.log",HoraColeta)
+            gera_log("log_IDS.log",idServer)
         elif sys.argv[2].upper() =="SRV":
             print(sServer)
-            gera_log("log_SRV.log",HoraColeta)
+            gera_log("log_SRV.log",sServer)
         elif sys.argv[2].upper() =="SCP":
             print(Pais)
-            gera_log("log_SCP.log",HoraColeta)
+            gera_log("log_SCP.log",Pais)
         elif sys.argv[2].upper() =="SCC":
             print(CC)
-            gera_log("log_SCC.log",HoraColeta)
+            gera_log("log_SCC.log",CC)
         elif sys.argv[2].upper() =="SLT":
             print(Latitude_S)
-            gera_log("log_SLT.log",HoraColeta)
+            gera_log("log_SLT.log",Latitude_S)
         elif sys.argv[2].upper() =="SLO":
             print(Longitude_S)
-            gera_log("log_SLO.log",HoraColeta)
+            gera_log("log_SLO.log",Longitude_S)
         elif sys.argv[2].upper() =="STO":
             print(Latencia_S)
-            gera_log("log_STO.log",HoraColeta)
+            gera_log("log_STO.log",Latencia_S)
         elif sys.argv[2].upper() =="VDL":
             print(Download)
-            gera_log("log_VDL.log",HoraColeta)
+            gera_log("log_VDL.log",Download)
         elif sys.argv[2].upper() =="VUL":
             print(Upload)
-            gera_log("log_VUL.log",HoraColeta)
+            gera_log("log_VUL.log",Upload)
         elif sys.argv[2].upper() =="CIP":
             print(IP_Address)
-            gera_log("log_CIP.log",HoraColeta)
+            gera_log("log_CIP.log",IP_Address)
         elif sys.argv[2].upper() =="CNM":
             print(ISP)
-            gera_log("log_CNM.log",HoraColeta)
+            gera_log("log_CNM.log",ISP)
         elif sys.argv[2].upper() =="CRT":
             print(ISP_Rate)
-            gera_log("log_CRT.log",HoraColeta)
+            gera_log("log_CRT.log",ISP_Rate)
         elif sys.argv[2].upper() =="CCC":
             print(CCCLiente)
-            gera_log("log_CCC.log",HoraColeta)
+            gera_log("log_CCC.log",CCCLiente)
         elif sys.argv[2].upper() =="CLT":
             print(Latitude_C)
-            gera_log("log_CLT.log",HoraColeta)
+            gera_log("log_CLT.log",Latitude_C)
         elif sys.argv[2].upper() =="CLO":
             print(Longitude_C)
-            gera_log("log_CLO.log",HoraColeta)
+            gera_log("log_CLO.log",Longitude_C)
         elif sys.argv[2].upper() =="CTM":
             print(Timestamp_C)
-            gera_log("log_CTM.log",HoraColeta)
+            gera_log("log_CTM.log",Timestamp_C)
         elif sys.argv[2].upper() =="THC":
             print(HoraColeta)
             gera_log("log_THC.log",HoraColeta)
